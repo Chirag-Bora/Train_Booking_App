@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Booking</title>
+    <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+    <div class="cb-register-box">
+      <form id="registerForm" action="/" method="post">
+          <h2>Register User</h2>
+        <input type="text" name="name" id="name" placeholder="Enter Name" required><br><br>
+        <input type="email" name="email" id="email"  placeholder="Enter Email" required><br><br>
+        <input type="password" name="password" id="password" placeholder="Enter Password" required><br><br>
+        <button type="submit">Register</button>
+        <p>Already have an account?<a href="/login">Login</a></p>
+      </form>
+    </div>
+  <script>
+
+  document.getElementById("registerForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+  
+  console.log(name, email);
+  try {
+    const res = await fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, email, password })
+    });
+    console.log(res);
+
+    const data = await res.json(); 
+    console.log(data);
+    alert(data.message);
+
+    if (res.ok) {
+      document.getElementById("registerForm").reset();
+      window.location.href = "/login"; 
+    }
+
+  } catch (err) {
+    console.error("Registration error:", err);
+    alert("Something went wrong. Please try again.");
+  }
+});
+
+
+  </script>
+</body> 
+</html>

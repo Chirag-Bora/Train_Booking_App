@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #003366; /* Deep blue background from login page */
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cb-register-box {
+    background: #4d94ff; /* Lighter blue from login form */
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    width: 100%;
+    max-width: 400px;
+}
+
+#registerForm {
+    display: flex;
+    flex-direction: column;
+}
+
+#registerForm h2 {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#registerForm input {
+    padding: 12px;
+    border: 1px solid #003366;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: white;
+    margin-bottom: 15px;
+}
+
+#registerForm button {
+    background: #ffcc00; /* Yellow color from login button */
+    color: #003366; /* Deep blue text */
+    border: none;
+    border-radius: 5px;
+    padding: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+#registerForm button:hover {
+    background: #e6b800; /* Slightly darker yellow */
+    transform: translateY(-2px);
+}
+
+#registerForm p {
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+#registerForm a {
+    color: #ffcc00; /* Yellow color from login button */
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 5px;
+}
+
+#registerForm a:hover {
+    text-decoration: underline;
+}
+
+/* Remove the default br tags spacing */
+#registerForm br {
+    display: none;
+}

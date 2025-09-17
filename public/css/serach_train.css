@@ -1,0 +1,342 @@
+/* SEARCh page */
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #003366; /* Deep blue background from login page */
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background: #003366; /* Deep blue background */
+    color: white;
+    padding: 20px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.logo i {
+    margin-right: 10px;
+    color: #ffcc00;
+}
+
+.search-container {
+    background: #285290; 
+    border-radius: 10px;
+    padding: 25px;
+    margin: 30px auto;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    max-width: 900px;
+}
+
+.search-title {
+    color: white;
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.search-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr auto;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    color: white;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.form-group input, .form-group select {
+    padding: 12px;
+    border: 1px solid #003366;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: white;
+}
+
+.btn-search {
+    background: #ffcc00; /* Yellow color from login button */
+    color: #003366; /* Deep blue text */
+    border: none;
+    border-radius: 5px;
+    height: 47px;
+    padding: 0 20px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 16px;
+    align-self: flex-end;
+}
+
+.btn-search:hover {
+    background: #e6b800; /* Slightly darker yellow */
+    transform: translateY(-2px);
+}
+
+.results-container {
+    margin-top: 30px;
+}
+
+.results-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.results-title {
+    color: white;
+    font-size: 22px;
+}
+
+.filter-options {
+    display: flex;
+    gap: 10px;
+}
+
+.filter-btn {
+    background: #4d94ff; /* Lighter blue from login form */
+    border: 1px solid #ffcc00; /* Yellow border */
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background: #ffcc00; /* Yellow color from login button */
+    color: #003366; /* Deep blue text */
+}
+
+.train-card {
+    background: white;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+
+.train-card:hover {
+    transform: translateY(-5px);
+}
+
+.train-header {
+    background: #003366; /* Deep blue background */
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.train-name {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.train-badges {
+    display: flex;
+    gap: 10px;
+}
+
+.badge {
+    background: #ffcc00; /* Yellow color from login button */
+    color: #003366; /* Deep blue text */
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.train-details {
+    padding: 20px;
+}
+
+.train-timing {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.timing-item {
+    text-align: center;
+}
+
+.timing-time {
+    font-size: 20px;
+    font-weight: 700;
+    color: #003366; /* Deep blue text */
+}
+
+.timing-station {
+    font-size: 14px;
+    color: #555;
+}
+
+.duration {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.duration-time {
+    font-weight: 500;
+    color: #003366; /* Deep blue text */
+}
+
+.duration-line {
+    width: 100px;
+    height: 2px;
+    background: #ffcc00; /* Yellow color from login button */
+    margin: 5px 0;
+    position: relative;
+}
+
+.duration-line::before, .duration-line::after {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #ffcc00; /* Yellow color from login button */
+    border-radius: 50%;
+}
+
+.duration-line::before {
+    left: 0;
+    top: -3px;
+}
+
+.duration-line::after {
+    right: 0;
+    top: -3px;
+}
+
+.class-availability {
+    margin-top: 20px;
+}
+
+.class-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.class-table th {
+    background: #e6f0ff; /* Light blue background */
+    color: #003366; /* Deep blue text */
+    padding: 10px;
+    text-align: left;
+}
+
+.class-table td {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.class-table tr:last-child td {
+    border-bottom: none;
+}
+
+.available {
+    color: #28a745;
+    font-weight: 500;
+}
+
+.rac {
+    color: #fd7e14;
+    font-weight: 500;
+}
+
+.train-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.train-note {
+    font-size: 14px;
+    color: #555;
+    font-style: italic;
+}
+
+.btn-view-route {
+    background: #003366; /* Deep blue background */
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.btn-view-route:hover {
+    background: #002244; /* Darker blue */
+}
+
+.btn-view-route i {
+    margin-left: 5px;
+}
+
+.last-updated {
+    font-size: 12px;
+    color: #777;
+    text-align: right;
+}
+
+@media (max-width: 768px) {
+    .search-form {
+        grid-template-columns: 1fr;
+    }
+    
+    .train-timing {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .duration-line {
+        width: 100%;
+    }
+}
