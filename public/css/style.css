@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #003366; /* Deep blue background */
+    background-color: #0a2463; 
     color: #333;
     line-height: 1.6;
     min-height: 100vh;
@@ -18,7 +18,7 @@ body {
 
 
 .login-box {
-    background: #4d94ff; /* Lighter blue from login form */
+    background: #003366; 
     border-radius: 10px;
     padding: 30px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);

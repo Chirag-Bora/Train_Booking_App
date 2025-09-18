@@ -5,8 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Train Booking</title>
     <link rel="stylesheet" href="css/register.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+     <div class="header">
+        <h1>
+            <i class="fas fa-train"></i>
+            RailSearch
+        </h1>
+    </div>
     <div class="cb-register-box">
       <form id="registerForm" action="/" method="post">
           <h2>Register User</h2>
@@ -28,7 +36,7 @@
   
   console.log(name, email);
   try {
-    const res = await fetch("/", {
+    const res = await fetch("/auth/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, email, password })

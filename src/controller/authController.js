@@ -48,7 +48,6 @@ exports.login = async (req, res) => {
 
     const user = results[0];
   
-
     try {
       const isMatch = await bcrypt.compare(password, user.password);
       if (!isMatch) {
@@ -70,5 +69,22 @@ exports.login = async (req, res) => {
 };
 
 exports.search = (req, res) => {
-  res.json({ message: "Welcome to Train Search Page", user: req.user });
-};
+
+   try {
+    db.query("SELECT * FROM trains", (err, results) => {
+      if (err) {
+        console.error("DB error:", err);
+        return res.status(500).json({ message: "Database error" });
+      }
+      return res.json({
+        message: "Search successful",
+        user: req.user,  
+        data: results,    
+      });
+      
+    });
+  } catch (error) {
+    console.error("Search error:", error);
+    return res.status(500).json({ message: "Internal server error" });
+  }
+}
