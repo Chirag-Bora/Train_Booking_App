@@ -1,0 +1,197 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: #0a2463;
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.header {
+    background-color: #003366;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+}
+
+.header h2 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.header p {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.train-schedule {
+    padding: 20px;
+}
+
+.train-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.train-header {
+    background-color: #f5f5f5;
+    padding: 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.train-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #003366;
+    margin-bottom: 5px;
+}
+
+.train-number {
+    font-size: 14px;
+    color: #616161;
+}
+
+.train-details {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.departure, .arrival {
+    flex: 1;
+    text-align: center;
+}
+
+.station {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.date-time {
+    font-size: 14px;
+    color: #616161;
+}
+
+.journey-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #003366;
+}
+
+.classes {
+    padding: 0 15px 15px;
+}
+
+.class-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.class-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.class-option {
+    background-color: #f5f5f5;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    padding: 8px 12px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.refresh-icon {
+    color: #4caf50;
+    margin-left: 5px;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.btn {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #ffc107;
+    color: #003366;
+}
+
+.btn-primary:hover {
+    background-color: #ffb300;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary {
+    background-color: #003366;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #0d47a1;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.note {
+    background-color: #fffde7;
+    border-left: 4px solid #ffc107;
+    padding: 10px 15px;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #616161;
+}
+
+@media (max-width: 600px) {
+    .train-details {
+        flex-direction: column;
+    }
+    
+    .journey-arrow {
+        margin: 10px 0;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+    }
+}

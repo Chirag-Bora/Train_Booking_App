@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 
 
-// REGISTER
+// REGISTER USER
 exports.register = async (req, res) => {
   const { name, email, password } = req.body;
 
@@ -29,6 +29,8 @@ exports.register = async (req, res) => {
     res.status(500).json({ message: "Error hashing password" });
   }
 };
+
+
 
 // LOGIN
 exports.login = async (req, res) => {
@@ -68,6 +70,8 @@ exports.login = async (req, res) => {
   });
 };
 
+
+// VIEW ALL TRAIN
 exports.search = (req, res) => {
 
    try {

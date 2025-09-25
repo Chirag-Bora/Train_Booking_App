@@ -30,8 +30,11 @@ app.get("/search", (req, res) =>{
     res.sendFile(path.join(__dirname, "public", "search.html"))
 });
 
+//Routes to Server Search-data
+app.get("/search-data",(req,res)=>{
+    res.sendFile(path.join(__dirname,"public", "searchdata.html"))
+})
 
  
-
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on ${PORT}`));

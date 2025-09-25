@@ -8,6 +8,6 @@ const authController = require("../controller/authController");
 router.post("/register",authController.register);
 router.post("/login",authController.login);
 
-router.get("/search",authentication,authController.search);
+router.get("/search",authController.search);
 
 module.exports = router;
